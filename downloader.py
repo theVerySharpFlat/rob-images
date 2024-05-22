@@ -20,14 +20,5 @@ with open('treeList.txt') as csvFile:
 
     for row in reader:
         table.append(row)
+        downloadImagesForTree(row[0], row[1])
 
-
-
-procs = []
-for row in table:
-    proc = multiprocessing.Process(target=downloadImagesForTree, args=[row[0], row[1]])
-    procs.append(proc)
-    proc.start()
-
-for proc in procs:
-    proc.join()
