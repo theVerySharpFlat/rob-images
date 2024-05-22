@@ -1,0 +1,2 @@
+bing-image-downloader
+reportlab
